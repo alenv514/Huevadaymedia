@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>KARLA LLERENA VALES VRG :) </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .container {
+      background: rgba(30, 30, 30, 0.85);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 48px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .mano {
+      font-size: 8rem;
+      filter: drop-shadow(0 4px 16px #0008);
+      animation: animacion 4s steps(5) forwards;
+      transition: transform 0.2s;
+      user-select: none;
+    }
+    .mano:hover {
+      transform: scale(1.1) rotate(-5deg);
+      filter: drop-shadow(0 8px 32px #fff4);
+    }
+    @keyframes animacion {
+      0%   { content: "🖐️"; }   /* Mano abierta */
+      20%  { content: "✋"; }   /* Palma extendida */
+      40%  { content: "🤚"; }   /* Palma hacia fuera */
+      60%  { content: "🤟"; }   /* Mano rock */
+      80%  { content: "✌️"; }  /* Mano en V */
+      100% { content: "🖕"; }   /* Mano final */
+    }
+    .mano::before {
+      content: "🖐️";
+      animation: animacion 4s steps(5) forwards;
+      display: inline-block;
+      transition: filter 0.2s;
+    }
+    .titulo {
+      color: #fff;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #000a;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+    .instruccion {
+      color: #bbb;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="titulo">KARLA LLERENA VALES VRG :)</div>
+    <div class="mano"></div>
+    <div class="instruccion">................</div>
+  </div>
+</body>
+</html>

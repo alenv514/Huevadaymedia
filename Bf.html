@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Mejor Amiga 💜</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6a0dad, #8A2BE2, #4B0082);
+        background-size: 400% 400%;
+        animation: bgGradient 12s ease infinite;
+        overflow: hidden;
+    }
+
+    @keyframes bgGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        text-align: center;
+        max-width: 600px;
+        width: 90%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .heart {
+        font-size: 80px;
+        margin-bottom: 20px;
+        animation: pulse 1.5s infinite;
+        text-shadow: 0 0 20px #ff66ff, 0 0 40px #ff99ff;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #fff, #d8b4fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .message {
+        color: #f3e8ff;
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .special-text {
+        font-weight: bold;
+        color: #e9d5ff;
+        text-shadow: 0 0 8px rgba(233,213,255,0.8);
+    }
+
+    .btn {
+        background: linear-gradient(90deg, #8A2BE2, #c084fc);
+        color: white;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px #a855f7, 0 0 30px #9333ea;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 0 25px #c084fc, 0 0 50px #9333ea;
+    }
+
+    /* Flores flotando */
+    .flower {
+        position: absolute;
+        font-size: 28px;
+        opacity: 0.8;
+        animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">💜</div>
+        <h1>Para Mi Mejor Amiga</h1>
+        <div class="message">
+            <p>Eres alguien que siempre aporta alegría y buena vibra, aunque seas un poco disociada :) </p>
+            <p>Valoro mucho nuestra amistad y lo que compartimos.</p>
+            <p>Gracias por ser auténtica y estar presente cuando más importa.</p>
+            <p>¡Eres <span class="special-text">maravillosa</span> y muy especial!</p>
+        </div>
+        <button class="btn" onclick="showSurprise()">✨ Haz clic para tu sorpresa</button>
+    </div>
+
+    <script>
+        // Función para soltar flores flotantes
+        function releaseFlowers() {
+            const flowers = ["🌸","🌷","🌹","🌺","💐","🌻"];
+            const flower = document.createElement("div");
+            flower.className = "flower";
+            flower.textContent = flowers[Math.floor(Math.random()*flowers.length)];
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.top = "100vh";
+            flower.style.animationDuration = (6 + Math.random()*4) + "s";
+            document.body.appendChild(flower);
+
+            setTimeout(() => flower.remove(), 10000);
+        }
+
+        function showSurprise() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(releaseFlowers, i*300);
+            }
+
+            setTimeout(() => {
+                alert("💜 Gracias por ser tú, mi mejor amiga ✨");
+            }, 4000);
+        }
+
+        // Flores automáticas de fondo
+        setInterval(releaseFlowers, 1500);
+    </script>
+</body>
+</html>
